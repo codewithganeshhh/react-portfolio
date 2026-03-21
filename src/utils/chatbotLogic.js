@@ -144,7 +144,7 @@ const intents = [
     },
   },
   {
-    keywords: ["who is mihir", "who is he", "about yourself", "introduce yourself", "tell me about yourself"],
+    keywords: ["who is Ganesh", "who is he", "about yourself", "introduce yourself", "tell me about yourself"],
     response: () =>
       `${name} is a **${title}** focused on **${focus}**. ${aboutMeData.intro.description} ${aboutMeData.sections[1].content} Based in **${location}**. ${availability}`,
   },
