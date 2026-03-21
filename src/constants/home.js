@@ -25,7 +25,7 @@ export const homeData = {
     email: "mailto:ganeshplays700@gmail.com",
   },
   image: {
-    src: "public/ganesh.jpg",
+    src: "/ganesh.jpg",
     alt: "Portrait of Ganesh Kumar",
     width: 420,
     height: 520,

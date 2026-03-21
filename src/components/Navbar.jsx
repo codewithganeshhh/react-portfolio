@@ -55,7 +55,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               aria-label="Ganesh Kumar home"
             >
               <img
-                src="/public/icon.png"
+                src="/icon.png"
                 alt="Ganesh Kumar Logo"
                 className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
               />
