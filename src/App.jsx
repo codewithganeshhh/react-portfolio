@@ -13,7 +13,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 
 // Lazy load below-the-fold sections for faster LCP
 const Projects = lazy(() => import("./components/sections/Projects").then(m => ({ default: m.Projects })));
-const Testimonials = lazy(() => import("./components/sections/Testimonials"));
+const Awards = lazy(() => import("./components/sections/Awards").then(m => ({ default: m.Awards || m.default })));
 const Contact = lazy(() => import("./components/sections/Contact").then(m => ({ default: m.Contact })));
 const Certifications = lazy(() => import("./components/sections/Certifications"));
 const WorkExperience = lazy(() => import("./components/sections/WorkExperience"));
@@ -69,7 +69,7 @@ function App() {
                   <Projects />
                   <Education />
                   <Certifications />
-                  <Testimonials />
+                  <Awards />
                   <Contact />
                 </Suspense>
               </ErrorBoundary>
@@ -83,7 +83,7 @@ function App() {
           <Route path="/projects" element={<Suspense fallback={<SectionLoader />}><Projects /></Suspense>} />
           <Route path="/education" element={<Suspense fallback={<SectionLoader />}><Education /></Suspense>} />
           <Route path="/certifications" element={<Suspense fallback={<SectionLoader />}><Certifications /></Suspense>} />
-          <Route path="/testimonials" element={<Suspense fallback={<SectionLoader />}><Testimonials /></Suspense>} />
+          <Route path="/awards" element={<Suspense fallback={<SectionLoader />}><Awards /></Suspense>} />
           <Route path="/contact" element={<Suspense fallback={<SectionLoader />}><Contact /></Suspense>} />
         </Routes>
       </AnimatePresence>

@@ -2,28 +2,24 @@
 
 export const educationList = [
   {
-    degree: "Master of Computer Applications (MCA)",
-    institution: "MES Institute of Management & Career Courses(IMCC)",
-    university: "Savitribai Phule Pune University",
-    location: "Pune, India",
-    duration: "2020 – 2022",
-  },
-  {
     degree: "Bachelors in Computer Applications (BCA)",
-    institution: "Yashwantrao Chavan Maharashtra Open University",
-    location: "Nashik, India",
-    duration: "2017 – 2020",
+    institution: "Netaji Subhas University",
+    location: "Jamshedpur, India",
+    duration: "2023 – 2026",
+    image: "/public/nsu.jpeg",
   },
   {
-    degree: "Diploma in Electronics & Telecommunication Engineering",
-    institution: "MIT Polytechnic",
-    location: "Pune, India",
-    duration: "2015",
+    degree: "Senior Secondary (HSC)",
+    institution: "Karim City College",
+    location: "Jamshedpur, India",
+    duration: "2018 - 2020",
+    image: "/public/kcc.png",
   },
   {
     degree: "Secondary School Certificate (SSC)",
-    institution: "Symbiosis School",
-    location: "Pune, India",
-    duration: "2011",
+    institution: "South Point School",
+    location: "Jamshedpur, India",
+    duration: "2017 - 2018",
+    image: "/public/sps.jpg",
   },
 ];

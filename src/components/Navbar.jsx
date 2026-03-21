@@ -29,7 +29,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     { label: "projects", path: "/projects" },
     { label: "education", path: "/education" },
     { label: "certifications", path: "/certifications" },
-    { label: "testimonials", path: "/testimonials" },
+    { label: "awards", path: "/awards" },
     { label: "contact", path: "/contact" },
   ];
 

@@ -1,4 +1,3 @@
-
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { homeData } from "../../constants/home";
@@ -8,9 +7,9 @@ import { TiltCard } from "../ui/TiltCard";
 import { InteractiveGlow } from "../ui/InteractiveGlow";
 
 const stats = [
-  { value: "3+", label: "Years Experience" },
-  { value: "30+", label: "Projects Built" },
-  { value: "10+", label: "Certifications" },
+  { value: "6 Months", label: "Experience" },
+  { value: "5+", label: "Projects Built" },
+  { value: "5+", label: "Certifications" },
 ];
 
 export const Home = () => {

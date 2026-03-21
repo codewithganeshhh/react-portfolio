@@ -26,38 +26,87 @@ export const Contact = () => {
         transition={{ staggerChildren: 0.2 }}
         className="w-full max-w-5xl space-y-12 relative z-10"
       >
-        {/* Hire Me Hero Card */}
+        {/* Contact Form Card */}
         <motion.div
           variants={{
             hidden: { opacity: 0, scale: 0.95, y: 30 },
             visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
           }}
-          className="relative glass-card gradient-border bg-white text-center p-12 md:p-16 space-y-8 overflow-hidden"
+          className="relative glass-card gradient-border bg-white p-6 md:p-8 space-y-6 overflow-hidden max-w-2xl mx-auto w-full"
         >
-          <div className="relative z-10 space-y-4">
-            <p className="text-sm font-bold text-blue-600 tracking-widest uppercase">
+          <div className="relative z-10 space-y-2 text-center">
+            <p className="text-xs font-bold text-blue-600 tracking-widest uppercase">
               Let's Connect
             </p>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-              {contactConfig.heading}
+            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+              Send Me a Message
             </h2>
-            <p className="text-lg font-medium text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              {contactConfig.description}
-            </p>
           </div>
 
-          <div className="relative z-10 pt-4">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              href={contactConfig.ctaLink}
-              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-[0_10px_20px_rgba(37,99,235,0.2)] hover:shadow-[0_15px_30px_rgba(37,99,235,0.3)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-            >
-              {contactConfig.ctaText}
-              <span className="text-xl">☀️</span>
-            </motion.a>
-          </div>
+          <form action="https://api.web3forms.com/submit" method="post" className="relative z-10 space-y-4">
+            <input type="hidden" name="access_key" value="53525673-82d1-494b-a4d9-617cccffc76a" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1 text-left">
+                <label htmlFor="name" className="text-sm font-semibold text-slate-700 ml-1">Your Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your Name"
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm px-4 py-2.5 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all font-medium"
+                />
+              </div>
+              <div className="space-y-1 text-left">
+                <label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">Your Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm px-4 py-2.5 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all font-medium"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-1 text-left">
+              <label htmlFor="subject" className="text-sm font-semibold text-slate-700 ml-1">Subject</label>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="What is this regarding?"
+                required
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm px-4 py-2.5 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all font-medium"
+              />
+            </div>
+
+            <div className="space-y-1 text-left">
+              <label htmlFor="message" className="text-sm font-semibold text-slate-700 ml-1">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                placeholder="Your Message"
+                required
+                className="w-full bg-slate-50 border border-slate-200 text-slate-900 text-sm px-4 py-2.5 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all font-medium resize-none"
+              ></textarea>
+            </div>
+
+            <div className="pt-2 text-center">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                type="submit"
+                className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto px-8 py-3 rounded-lg font-bold text-sm shadow-[0_5px_15px_rgba(37,99,235,0.2)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              >
+                Send Message
+              </motion.button>
+            </div>
+          </form>
         </motion.div>
 
         {/* Office + Map */}

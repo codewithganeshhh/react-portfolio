@@ -148,79 +148,38 @@
             "title": "Programming Languages & Databases",
             "skills": [
                 {
-                    "name": "Python",
-                    "icon": "python"
+                    "name": "C++",
+                    "icon": "cpp"
+                },
+                {
+                    "name": "Java",
+                    "icon": "java"
+                },
+                {
+                    "name": "JavaScript",
+                    "icon": "javascript"
+                },
+                {
+                    "name": "PHP",
+                    "icon": "php"
                 },
                 {
                     "name": "MySQL",
                     "icon": "mysql"
                 },
                 {
-                    "name": "Microsoft SQL Server",
-                    "icon": "mssql"
-                },
-                {
-                    "name": "PostgreSQL",
-                    "icon": "postgresql"
-                },
-                {
                     "name": "MongoDB",
                     "icon": "mongodb"
                 },
                 {
-                    "name": "Cassandra",
-                    "icon": "cassandra"
+                    "name": "PostgreSQL",
+                    "icon": "postgresql"
                 }
             ]
         },
         {
-            "title": "Data Visualization Tools",
+            "title": "Frontend Tools & UI Libraries",
             "skills": [
-                {
-                    "name": "Power BI",
-                    "icon": "powerbi"
-                },
-                {
-                    "name": "Tableau",
-                    "icon": "tableau"
-                },
-                {
-                    "name": "Excel",
-                    "icon": "excel"
-                },
-                {
-                    "name": "Amazon QuickSight",
-                    "icon": "quicksight"
-                },
-                {
-                    "name": "Looker Studio",
-                    "icon": "looker"
-                }
-            ]
-        },
-        {
-            "title": "Web Technologies",
-            "skills": [
-                {
-                    "name": "Django",
-                    "icon": "django"
-                },
-                {
-                    "name": "Flask",
-                    "icon": "flask"
-                },
-                {
-                    "name": "Streamlit",
-                    "icon": "streamlit"
-                },
-                {
-                    "name": "FastAPI",
-                    "icon": "fastapi"
-                },
-                {
-                    "name": "REST API",
-                    "icon": "rest"
-                },
                 {
                     "name": "HTML",
                     "icon": "html"
@@ -238,53 +197,82 @@
                     "icon": "react"
                 },
                 {
-                    "name": "Node.js",
-                    "icon": "node"
+                    "name": "Bootstrap",
+                    "icon": "bootstrap"
                 },
                 {
-                    "name": "TailwindCSS",
+                    "name": "Tailwind CSS",
                     "icon": "tailwind"
+                },
+                {
+                    "name": "Material UI",
+                    "icon": "mui"
                 }
             ]
         },
         {
-            "title": "Cloud, Big Data & DevOps",
+            "title": "Backend & API Development",
             "skills": [
                 {
-                    "name": "AWS",
-                    "icon": "aws"
+                    "name": "Node.js",
+                    "icon": "node"
                 },
                 {
-                    "name": "Azure",
-                    "icon": "azure"
+                    "name": "Express.js",
+                    "icon": "express"
+                },
+                {
+                    "name": "PHP",
+                    "icon": "php"
+                },
+                {
+                    "name": "REST API",
+                    "icon": "rest"
+                },
+                {
+                    "name": "MVC Architecture",
+                    "icon": "mvc"
+                },
+                {
+                    "name": "JWT Authentication",
+                    "icon": "jwt"
+                }
+            ]
+        },
+        {
+            "title": "Tools & Cloud",
+            "skills": [
+                {
+                    "name": "Git",
+                    "icon": "git"
+                },
+                {
+                    "name": "GitHub",
+                    "icon": "github"
                 },
                 {
                     "name": "GCP",
                     "icon": "gcp"
                 },
                 {
-                    "name": "Apache Spark",
-                    "icon": "spark"
+                    "name": "VS Code",
+                    "icon": "vscode"
                 },
                 {
-                    "name": "Apache Hive",
-                    "icon": "hive"
+                    "name": "Postman",
+                    "icon": "postman"
                 },
                 {
-                    "name": "Apache Hadoop",
-                    "icon": "hadoop"
+                    "name": "Vercel",
+                    "icon": "vercel"
                 },
                 {
-                    "name": "Apache Kafka",
-                    "icon": "kafka"
+                    "name": "Render",
+                    "icon": "render"
                 },
                 {
-                    "name": "Docker",
-                    "icon": "docker"
-                },
-                {
-                    "name": "Git",
-                    "icon": "git"
+                    "name": "N8n",
+                    "icon": "n8n"
                 }
             ]
         }

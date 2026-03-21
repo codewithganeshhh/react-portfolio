@@ -13,11 +13,11 @@ import { categories } from "../constants/skills";
 import { allProjects } from "../constants/projects";
 import { certifications } from "../constants/certifications";
 import { experiences } from "../constants/workexperience";
-import { testimonials } from "../constants/testimonials";
+import { awardsList } from "../constants/awards";
 import { homeData } from "../constants/home";
 
 // Safely extract data with fallbacks
-const name = aboutMeData?.intro?.name ?? "Mihir";
+const name = aboutMeData?.intro?.name ?? "Ganesh";
 const title = aboutMeData?.intro?.title ?? "Software Developer";
 const focus = aboutMeData?.intro?.focus ?? "Data Analytics and AI";
 const email = contactConfig?.socials?.email?.replace("mailto:", "") ?? "";
@@ -40,12 +40,12 @@ const intents = [
   {
     keywords: ["hi", "hello", "hey", "hola", "good morning", "good evening", "howdy", "greetings", "sup", "yo"],
     response: () =>
-      `Hi! I'm the portfolio assistant for **${name}**. You can ask about skills, projects, experience, education, certifications, testimonials, or how to get in touch. How can I help?`,
+      `Hi! I'm the portfolio assistant for **${name}**. You can ask about skills, projects, experience, education, certifications, awards, or how to get in touch. How can I help?`,
   },
   {
     keywords: ["who are you", "what is this", "what can you do", "help"],
     response: () =>
-      `I'm a chatbot on ${name}'s portfolio. I can tell you about:\n• **Who ${name} is** – role, focus, background\n• **Skills** – tech stack and tools\n• **Projects** – key work and links\n• **Education** – degrees and institutions\n• **Work experience** – companies and roles\n• **Certifications** – Microsoft, Google, Coursera, etc.\n• **Testimonials** – what others say\n• **Contact** – email, LinkedIn, location\n\nJust ask in your own words!`,
+      `I'm a chatbot on ${name}'s portfolio. I can tell you about:\n• **Who ${name} is** – role, focus, background\n• **Skills** – tech stack and tools\n• **Projects** – key work and links\n• **Education** – degrees and institutions\n• **Work experience** – companies and roles\n• **Certifications** – Microsoft, Google, Coursera, etc.\n• **Awards** – recognitions and achievements\n• **Contact** – email, LinkedIn, location\n\nJust ask in your own words!`,
   },
   {
     keywords: ["education", "degree", "college", "university", "study", "studied", "qualification", "masters", "bachelors", "mca", "bca", "diploma"],
@@ -78,11 +78,11 @@ const intents = [
     },
   },
   {
-    keywords: ["testimonial", "testimonials", "recommendation", "review", "what people say", "what others say", "krish naik", "harsh sinha"],
+    keywords: ["award", "awards", "achievement", "achievements", "recognition", "competition", "hackathon"],
     response: () => {
-      const lines = (testimonials || []).map((t) => `**${t.name}** (${t.role || ""}):\n"${(t.quote || "").slice(0, 200)}${(t.quote && t.quote.length > 200) ? "…" : ""}"`);
-      const text = lines.length ? lines.join("\n\n") : `See the **Testimonials** section for what others say about ${name}.`;
-      return `What people say about ${name}:\n\n${text}\n\nSee the **Testimonials** section for full quotes.`;
+      const lines = (awardsList || []).map((a) => `• **${a.title}** – ${a.organization} (${a.date})`);
+      const text = lines.length ? lines.join("\n") : `See the **Awards** section for ${name}'s recent recognitions.`;
+      return `${name}'s Awards & Achievements:\n\n${text}\n\nSee the **Awards** section for details.`;
     },
   },
   {
