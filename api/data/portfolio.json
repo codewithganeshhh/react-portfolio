@@ -2,112 +2,82 @@
     "about": {
         "name": "Ganesh Kumar",
         "title": "Software Developer",
-        "focus": "Data Analytics, Data Science, and AI Engineering",
-        "description": "Specializes in scalable analytics platforms, BI workflow automation, and intelligent applications that transform raw data into actionable business intelligence.",
-        "credentials": "Former Amazon Data Analyst and Software Developer - Data & AI in GovTech and 3× Microsoft Certified professional.",
-        "location": "Kothrud, Pune, Maharashtra, India",
+        "focus": "Web Development, Scalable Applications, Open Source",
+        "description": "I specialize in building full-stack web applications using React, Node.js, and MongoDB. I have hands-on experience developing real-world projects, contributing to open-source programs like GirlScript Summer of Code, and leading a tech community. I enjoy solving real-world problems through scalable and user-friendly applications.",
+        "credentials": "Full-Stack Web Developer skilled in React, Node.js, and MongoDB with hands-on experience in building real-world projects. Completed Meta Front-End & Back-End certifications and Oracle Cloud AI Foundations. Gained industry experience through internships at Digitrinix and PaulTech, and recognized as Best Intern. Active open-source contributor with top ranking in GirlScript Summer of Code.",
+        "location": "India",
         "availability": "Available for on-site, remote, and freelance roles globally.",
-        "roles": "Data Analyst • Data Scientist • Data Engineer • AI Engineer",
+        "roles": "Software Developer",
         "badges": [
-            "Ex-Amazon",
-            "Microsoft Certified: PL-300 • DP-100 • AI-102",
-            "Open to opportunities"
+            "Software Developer",
+            "University Hackathon Winner",
+            "Open Source Contributor",
+            "Tech Community Lead"
         ]
     },
     "contact": {
-        "email": "mihirkudale94@gmail.com",
-        "linkedin": "https://www.linkedin.com/in/mihirkudale/",
-        "github": "https://github.com/mihirkudale",
+        "email": "ganeshplays700@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/ganesh-kumar-816544282/",
+        "github": "https://github.com/codewithganeshhh",
         "phone": "Not provided publicly. Please reach out via email or LinkedIn."
     },
     "education": [
         {
-            "degree": "Master of Computer Applications (MCA)",
-            "institution": "MES Institute of Management & Career Courses (IMCC)",
-            "university": "Savitribai Phule Pune University",
-            "location": "Pune, India",
-            "duration": "2020–2022"
-        },
-        {
             "degree": "Bachelors in Computer Applications (BCA)",
-            "institution": "Yashwantrao Chavan Maharashtra Open University",
-            "location": "Nashik, India",
-            "duration": "2017–2020"
+            "institution": "Netaji Subhas University",
+            "location": "Jamshedpur, India",
+            "duration": "2023 – 2026"
         },
         {
-            "degree": "Diploma in Electronics & Telecommunication Engineering",
-            "institution": "MIT Polytechnic",
-            "location": "Pune, India",
-            "duration": "2015"
+            "degree": "Senior Secondary (HSC)",
+            "institution": "Karim City College",
+            "location": "Jamshedpur, India",
+            "duration": "2018 - 2020"
+        },
+        {
+            "degree": "Secondary School Certificate (SSC)",
+            "institution": "South Point School",
+            "location": "Jamshedpur, India",
+            "duration": "2017 - 2018"
         }
     ],
     "experience": [
         {
-            "company": "Integrated Consultancy Services",
-            "role": "Software Developer - Data & AI",
-            "location": "Pune, India",
-            "duration": "Aug 2024 – Nov 2025"
+            "company": "Paultech Software Services Pvt Ltd",
+            "role": "Software Developer",
+            "location": "Jamshedpur, India",
+            "duration": "Mar 2026 – Present"
         },
         {
-            "company": "Amazon",
-            "role": "Data Analyst",
+            "company": "Ardent Computech Pvt Ltd",
+            "role": "Fullstack Developer Intern",
+            "location": "Kolkata, India",
+            "duration": "Oct 2025 – Dec 2025"
+        },
+        {
+            "company": "Infotact Solutions",
+            "role": "Web Developer Intern",
             "location": "Bengaluru, India",
-            "duration": "Aug 2023 – Jan 2024"
+            "duration": "Jul 2025 – Sep 2025"
         },
         {
-            "company": "iNeuron",
-            "role": "Data Scientist Intern",
-            "location": "Bengaluru, India",
-            "duration": "Nov 2022 – Feb 2023"
-        },
-        {
-            "company": "The Sparks Foundation",
-            "role": "Data Science & Business Analytics Intern",
-            "location": "Singapore (Remote)",
-            "duration": "Oct 2021 – Nov 2021"
-        },
-        {
-            "company": "LetsGrowMore",
-            "role": "Data Science Intern",
-            "location": "Pune, India",
-            "duration": "Sep 2021 – Oct 2021"
-        },
-        {
-            "company": "KPMG Data Analytics Consulting (Virtual Internship)",
-            "role": "Data Analyst Intern",
-            "location": "Pune, India",
-            "duration": "Sep 2021 – Oct 2021"
-        },
-        {
-            "company": "SMC Infrastructures Pvt Ltd",
-            "role": "Business Analyst",
-            "location": "Mumbai, India",
-            "duration": "2018–2019"
-        },
-        {
-            "company": "Destylio Communication and Design LLP",
-            "role": "Business Analyst",
-            "location": "Pune, India",
-            "duration": "2017–2018"
-        },
-        {
-            "company": "P.M Kudale & Associates",
-            "role": "Business Analyst",
-            "location": "Pune, India",
-            "duration": "2015–2017"
+            "company": "Paultech Software Services Pvt Ltd",
+            "role": "FullStack Developer Intern",
+            "location": "Jamshedpur, India",
+            "duration": "May 2026 – Jul 2026"
         }
     ],
     "certifications": [
         {
-            "title": "Power BI Data Analyst (PL-300)",
+            "title": "Power BI Data Analyst",
             "issuer": "Microsoft"
         },
         {
-            "title": "Azure Data Scientist Associate (DP-100)",
+            "title": "Azure Data Scientist Associate",
             "issuer": "Microsoft"
         },
         {
-            "title": "Azure AI Engineer Associate (AI-102)",
+            "title": "Azure AI Engineer Associate",
             "issuer": "Microsoft"
         },
         {
@@ -279,41 +249,77 @@
     ],
     "projects": [
         {
-            "title": "Amazon Sales Dashboard",
-            "description": "Developed a Power BI dashboard to analyze product sales, returns, and reviews, addressing the need for data-driven decisions by providing insights into trends, geographic performance, and product metrics to optimize Amazon's e-commerce strategies.",
+            "title": "Personal Portfolio",
+            "description": "Built a responsive personal portfolio website using React, Tailwind CSS, and JavaScript to showcase projects, skills, and achievements. Focused on modern UI design with reusable components, smooth navigation, and optimized performance, ensuring a seamless experience across all devices.",
             "stack": [
-                "Power BI",
-                "SQL",
-                "Excel"
+                "React",
+                "Tailwind CSS",
+                "JavaScript",
+                "Vite"
             ],
-            "image": "/cloud.jpeg",
-            "github": "https://github.com/mihirkudale/Amazon-Dashboard-in-Power-BI/tree/main",
-            "demo": "https://app.powerbi.com/view?r=eyJrIjoiNTQ2ZWFlZTYtYWU2OC00OWU2LWE5YzEtOWU4NGY2ODUxZmNhIiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9"
+            "image": "/portfolio.png",
+            "github": "https://github.com/codewithganeshhh/react-portfolio",
+            "demo": "https://www.aboutganesh.tech"
         },
         {
-            "title": "Blinkit Dashboard",
-            "description": "The Blinkit dashboard provides a comprehensive view of operations, including real-time order tracking, inventory management, and performance analytics. It streamlines decision-making by offering actionable insights to enhance efficiency and customer satisfaction.",
+            "title": "Learnify - E-learning website",
+            "description": "Built a full-stack e-learning web application using Django and Bootstrap, enabling user authentication, course enrollment, and content management. Focused on scalable backend architecture and responsive UI design to provide a seamless and engaging learning experience.",
             "stack": [
-                "Python",
-                "Power BI",
-                "SQL",
-                "Excel"
+                "Django",
+                "HTML",
+                "Bootstrap",
+                "Python"
             ],
-            "image": "/kcc.png",
-            "github": "https://github.com/mihirkudale/Blinkit-Dashboard",
-            "demo": "https://app.powerbi.com/view?r=eyJrIjoiYzhmMmQyMzktNzVkNy00OGVmLWI3ZWEtNzFhZGM2NzIxNDZiIiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9"
+            "image": "/learnify.png",
+            "github": "https://github.com/codewithganeshhh/Learnify"
         },
         {
-            "title": "Madhav E-Commerce Sales Insights Dashboard",
-            "description": "Developed a Power BI dashboard to analyze Madhav Ecommerce sales performance, addressing the need for data-driven insights into sales, profit, and quantity by state, category, customer, and payment mode to optimize business strategies.",
+            "title": "University Management System",
+            "description": "Developed a full-stack university management system to streamline administrative workflows and enhance student services. Designed the system to support scalable management of academic processes and improve overall efficiency.",
             "stack": [
-                "Power BI",
-                "SQL",
-                "Excel"
+                "React",
+                "Node",
+                "MongoDB",
+                "REST API"
             ],
-            "image": "/hack.jpeg",
-            "github": "https://github.com/mihirkudale/Madhav-Ecommerce-Sales-Dashboard-Power-BI",
-            "demo": "https://app.powerbi.com/view?r=eyJrIjoiMTA3ZWQwNzEtOTQ4OS00NzM1LTlhYzktMGJlMGY0YmYxZDk3IiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9"
+            "image": "/erp.png",
+            "github": "https://github.com/codewithganeshhh/College-CMS"
+        },
+        {
+            "title": "BestBite",
+            "description": "BestBite is a food delivery website that allows users to order food from local restaurants. It features a modern UI design with a seamless user experience, enabling users to browse menus, place orders, and track their delivery status.",
+            "stack": [
+                "HTML",
+                "Bootstrap",
+                "JavaScript"
+            ],
+            "image": "/bestbite.png",
+            "github": "https://github.com/codewithganeshhh/BestBites",
+            "demo": "https://best-bites-dusky.vercel.app/"
+        },
+        {
+            "title": "NSU Tech Club",
+            "description": "NSU Tech Club is a  website for Netaji Subhas University's official tech club. It promotes learning, innovation, and collaboration in technology through workshops, hackathons, and real-world projects. ",
+            "stack": [
+                "HTML",
+                "Bootstrap",
+                "Web3Form API"
+            ],
+            "image": "/techclub.png",
+            "github": "https://github.com/codewithganeshhh/NSU-TECH-CLUB",
+            "demo": "https://codewithganeshhh.github.io/NSU-TECH-CLUB/"
+        },
+        {
+            "title": "Dynamic Weather Dashboard",
+            "description": "A dynamic weather dashboard that displays real-time weather information for any city worldwide. It features enabling users to check weather conditions, forecasts, and more.",
+            "stack": [
+                "JavaScript",
+                "Bootstrap",
+                "Weather API"
+            ],
+            "image": "/weather.png",
+            "github": "https://github.com/codewithganeshhh/Dynamic-Weather-Dashboard",
+            "demo": "https://codewithganeshhh.github.io/Dynamic-Weather-Dashboard/"
         }
     ]
 }
