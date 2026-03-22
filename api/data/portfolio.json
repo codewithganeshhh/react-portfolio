@@ -286,6 +286,7 @@
                 "SQL",
                 "Excel"
             ],
+            "image": "/cloud.jpeg",
             "github": "https://github.com/mihirkudale/Amazon-Dashboard-in-Power-BI/tree/main",
             "demo": "https://app.powerbi.com/view?r=eyJrIjoiNTQ2ZWFlZTYtYWU2OC00OWU2LWE5YzEtOWU4NGY2ODUxZmNhIiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9"
         },
@@ -298,6 +299,7 @@
                 "SQL",
                 "Excel"
             ],
+            "image": "/kcc.png",
             "github": "https://github.com/mihirkudale/Blinkit-Dashboard",
             "demo": "https://app.powerbi.com/view?r=eyJrIjoiYzhmMmQyMzktNzVkNy00OGVmLWI3ZWEtNzFhZGM2NzIxNDZiIiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9"
         },
@@ -309,6 +311,7 @@
                 "SQL",
                 "Excel"
             ],
+            "image": "/hack.jpeg",
             "github": "https://github.com/mihirkudale/Madhav-Ecommerce-Sales-Dashboard-Power-BI",
             "demo": "https://app.powerbi.com/view?r=eyJrIjoiMTA3ZWQwNzEtOTQ4OS00NzM1LTlhYzktMGJlMGY0YmYxZDk3IiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9"
         }

@@ -11,34 +11,33 @@ export const techDescriptions = {
 
 export const allProjects = [
   {
-    title: "Amazon Sales Dashboard",
+    title: "Personal Portfolio",
     description:
-      "Developed a Power BI dashboard to analyze product sales, returns, and reviews, addressing the need for data-driven decisions by providing insights into trends, geographic performance, and product metrics to optimize Amazon's e-commerce strategies.",
-    stack: ["Power BI", "SQL", "Excel"],
+      "Built a responsive personal portfolio website using React, Tailwind CSS, and JavaScript to showcase projects, skills, and achievements. Focused on modern UI design with reusable components, smooth navigation, and optimized performance, ensuring a seamless experience across all devices.",
+    stack: ["React", "Tailwind CSS", "JavaScript", "Vite"],
+    image: "/portfolio.png", // You can replace with the actual project image
     github:
-      "https://github.com/mihirkudale/Amazon-Dashboard-in-Power-BI/tree/main",
+      "https://github.com/codewithganeshhh/react-portfolio",
     demo:
-      "https://app.powerbi.com/view?r=eyJrIjoiNTQ2ZWFlZTYtYWU2OC00OWU2LWE5YzEtOWU4NGY2ODUxZmNhIiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9",
+      "https://www.aboutganesh.tech",
   },
   {
-    title: "Blinkit Dashboard",
+    title: "Learnify - E-learning website",
     description:
-      "The Blinkit dashboard provides a comprehensive view of operations, including real-time order tracking, inventory management, and performance analytics. It streamlines decision-making by offering actionable insights to enhance efficiency and customer satisfaction.",
-    stack: ["Python", "Power BI", "SQL", "Excel"],
-    github: "https://github.com/mihirkudale/Blinkit-Dashboard",
-    demo:
-      "https://app.powerbi.com/view?r=eyJrIjoiYzhmMmQyMzktNzVkNy00OGVmLWI3ZWEtNzFhZGM2NzIxNDZiIiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9",
+      "Built a full-stack e-learning web application using Django and Bootstrap, enabling user authentication, course enrollment, and content management. Focused on scalable backend architecture and responsive UI design to provide a seamless and engaging learning experience.",
+    stack: ["Django", "HTML", "Bootstrap", "Python"],
+    image: "/learnify.png", // You can replace with the actual project image
+    github: "https://github.com/codewithganeshhh/Learnify",
   },
   {
-    title: "Madhav E-Commerce Sales Insights Dashboard",
+    title: "University Management System",
     description:
-      "Developed a Power BI dashboard to analyze Madhav Ecommerce sales performance, addressing the need for data-driven insights into sales, profit, and quantity by state, category, customer, and payment mode to optimize business strategies.",
-    stack: ["Power BI", "SQL", "Excel"],
+      "Developed a full-stack university management system to streamline administrative workflows and enhance student services. Designed the system to support scalable management of academic processes and improve overall efficiency.",
+    stack: ["React", "Node", "MongoDB", "Tailwind CSS"],
+    image: "/erp.png", // You can replace with the actual project image
     github:
-      "https://github.com/mihirkudale/Madhav-Ecommerce-Sales-Dashboard-Power-BI",
-    demo:
-      "https://app.powerbi.com/view?r=eyJrIjoiMTA3ZWQwNzEtOTQ4OS00NzM1LTlhYzktMGJlMGY0YmYxZDk3IiwidCI6IjJjMzk3MjYyLTM1MGMtNGY5MC1iOTM0LWFiYzUxNmQ4MTc0ZCJ9",
+      "https://github.com/codewithganeshhh/College-CMS",
   },
 ];
 
-export const techFilters = ["All", "Python", "SQL", "Power BI", "Tableau"];
+export const techFilters = ["All", "React", "Node", "Django", "JavaScript"];

@@ -128,8 +128,16 @@ export const Projects = () => {
                     className="group relative flex flex-col h-full"
                   >
                     <TiltCard className="flex flex-col flex-1 h-full glass-card overflow-hidden bg-slate-50/50 hover:bg-white @container has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-blue-500 transition-all duration-300">
-                      {/* Colorful subtle top bar */}
-                      <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 to-cyan-400 opacity-80 group-hover:opacity-100 transition-opacity" />
+                      {/* Project Image */}
+                      {project.image && (
+                        <div className="w-full h-48 sm:h-56 overflow-hidden border-b border-slate-100/50 flex items-center justify-center p-4">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      )}
 
                       {/* Card body */}
                       <div className="p-6 @sm:p-8 flex flex-col flex-1 gap-y-1">
