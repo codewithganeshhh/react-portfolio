@@ -40,10 +40,10 @@ const Education = () => {
               >
                 {/* Institute Image */}
                 <div className="flex-shrink-0 w-full md:w-40 h-48 md:h-40 rounded-xl overflow-hidden relative shadow-sm group-hover:shadow-md transition-shadow">
-                  <img 
-                    src={edu.image} 
-                    alt={edu.institution} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  <img
+                    src={edu.image}
+                    alt={edu.institution}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-300"></div>
                   {/* Icon Overlay */}

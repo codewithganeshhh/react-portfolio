@@ -14,7 +14,7 @@ export const Awards = () => {
         aria-hidden="true"
         className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-100/50 blur-[100px] pointer-events-none"
       />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export const Awards = () => {
                       {award.title}
                     </h3>
                   </div>
-                  
+
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-sm font-semibold text-slate-600">
                       {award.organization}

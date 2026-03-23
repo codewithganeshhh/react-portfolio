@@ -1,5 +1,6 @@
 export const experiences = [
-    {
+  
+  /*  {
         company: "Paultech Software Services Pvt Ltd",
         location: "Jamshedpur, India",
         roles: [
@@ -10,7 +11,7 @@ export const experiences = [
                 display: "Mar 2026 – Present",
             },
         ],
-    },
+    },*/
     {
         company: "Ardent Computech Pvt Ltd",
         location: "Kolkata, India",
