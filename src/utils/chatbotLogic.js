@@ -95,52 +95,50 @@ const intents = [
     },
   },
   {
-    keywords: ["python project", "python projects", "show python"],
+    keywords: ["react project", "react projects", "show react"],
     response: () => {
-      const projects = allProjects.filter((p) => p.stack.includes("Python"));
+      const projects = allProjects.filter((p) => p.stack.includes("React"));
       const lines = projects.map((p) => `• **${p.title}**`);
-      return `${name}'s Python projects:\n\n${lines.join("\n")}\n\nSee the **Projects** section for details.`;
+      return `${name}'s React projects:\n\n${lines.join("\n")}\n\nSee the **Projects** section for details.`;
     },
   },
   {
-    keywords: ["sql project", "sql projects", "show sql", "database project"],
+    keywords: ["node project", "node projects", "show node", "backend project"],
     response: () => {
-      const projects = allProjects.filter((p) => p.stack.includes("SQL"));
+      const projects = allProjects.filter((p) => p.stack.includes("Node"));
       const lines = projects.map((p) => `• **${p.title}**`);
-      return `${name}'s SQL projects:\n\n${lines.join("\n")}\n\nSee the **Projects** section for details.`;
+      return `${name}'s Node.js & Backend projects:\n\n${lines.join("\n")}\n\nSee the **Projects** section for details.`;
     },
   },
   {
-    keywords: ["power bi project", "power bi projects", "power bi dashboard", "powerbi", "show power bi"],
+    keywords: ["full stack", "fullstack", "mern", "show full stack"],
     response: () => {
-      const projects = allProjects.filter((p) => p.stack.includes("Power BI"));
+      const projects = allProjects.filter((p) => p.stack.includes("MongoDB") || p.stack.includes("React"));
       const lines = projects.map((p) => `• **${p.title}**`);
-      return `${name}'s Power BI dashboards:\n\n${lines.join("\n")}\n\nSee the **Projects** section for demos.`;
+      return `${name}'s Full Stack projects:\n\n${lines.join("\n")}\n\nSee the **Projects** section for demos.`;
     },
   },
   {
-    keywords: ["tableau project", "tableau projects", "tableau dashboard", "tableau visualization", "show tableau"],
+    keywords: ["javascript project", "javascript projects", "show javascript"],
     response: () => {
-      const projects = allProjects.filter((p) => p.stack.includes("Tableau"));
+      const projects = allProjects.filter((p) => p.stack.includes("JavaScript"));
       const lines = projects.map((p) => `• **${p.title}**`);
-      return `${name}'s Tableau visualizations:\n\n${lines.join("\n")}\n\nSee the **Projects** section for demos.`;
+      return `${name}'s JavaScript projects:\n\n${lines.join("\n")}\n\nSee the **Projects** section for demos.`;
     },
   },
   {
-    keywords: ["project", "projects", "work", "portfolio", "what have you built", "dashboards"],
+    keywords: ["project", "projects", "work", "portfolio", "what have you built", "web apps"],
     response: () => {
-      const pythonCount = allProjects.filter((p) => p.stack.includes("Python")).length;
-      const sqlCount = allProjects.filter((p) => p.stack.includes("SQL")).length;
-      const powerBiCount = allProjects.filter((p) => p.stack.includes("Power BI")).length;
-      const tableauCount = allProjects.filter((p) => p.stack.includes("Tableau")).length;
+      const reactCount = allProjects.filter((p) => p.stack.includes("React")).length;
+      const nodeCount = allProjects.filter((p) => p.stack.includes("Node")).length;
+      const jsCount = allProjects.filter((p) => p.stack.includes("JavaScript")).length;
 
-      return `${name} has **${allProjects.length}+ projects** across 4 categories:\n\n` +
-        `• **Python** projects (${pythonCount})\n` +
-        `• **SQL** projects (${sqlCount})\n` +
-        `• **Power BI** dashboards (${powerBiCount})\n` +
-        `• **Tableau** visualizations (${tableauCount})\n\n` +
+      return `${name} has **${allProjects.length} main projects** across web development:\n\n` +
+        `• **React & Frontend** projects (${reactCount})\n` +
+        `• **Node.js & Backend** projects (${nodeCount})\n` +
+        `• **JavaScript** applications (${jsCount})\n\n` +
         `Ask about a specific category like:\n` +
-        `"Show Python projects" or "Power BI dashboards" or "Tableau projects"`;
+        `"Show React projects" or "Show Full Stack projects"`;
     },
   },
   {
@@ -159,9 +157,9 @@ const intents = [
       `${name} is based in **${location}**. ${availability}`,
   },
   {
-    keywords: ["amazon", "ex-amazon", "microsoft certified", "open to opportunities"],
+    keywords: ["paultech", "amazon", "microsoft certified", "open to opportunities"],
     response: () =>
-      `${name} is a former **Amazon** Data Analyst and **Microsoft Certified** (e.g. PL-300, DP-100, AI-102). ${homeData?.badges?.includes("Open to opportunities") ? "Open to opportunities. " : ""}Check **About** and **Certifications** for more.`,
+      `${name} is a Software Developer with experience at **Paultech Software Services** and is **Oracle Certified** (e.g. Oracle Certified Associate). ${homeData?.badges?.includes("Open to opportunities") ? "Open to opportunities. " : ""}Check **About** and **Certifications** for more.`,
   },
   {
     keywords: ["thanks", "thank you", "bye", "goodbye", "see you", "later"],
@@ -180,9 +178,9 @@ const TYPO_CORRECTIONS = {
   "skilz": "skills", "skils": "skills", "skilss": "skills",
   "tecnology": "technology", "tec": "tech", "tecnologies": "technologies",
   "projet": "project", "projcts": "projects", "projecst": "projects",
-  "pyhton": "python", "pythn": "python", "phyton": "python",
-  "powerbi": "power bi", "powebi": "power bi", "pwer bi": "power bi",
-  "tableu": "tableau", "tabluea": "tableau", "tabelau": "tableau",
+  "jvascript": "javascript", "jc": "javascript", "javascipt": "javascript",
+  "reactjs": "react", "rect": "react", "ract": "react",
+  "nodejs": "node", "nodjs": "node",
   "experiance": "experience", "expereince": "experience", "exprience": "experience",
   "experince": "experience", "experienc": "experience",
   "educaton": "education", "educatn": "education", "eductaion": "education",
@@ -191,7 +189,7 @@ const TYPO_CORRECTIONS = {
   "contct": "contact", "conact": "contact", "cotact": "contact",
   "emal": "email", "emial": "email", "mail": "email",
   "linkdin": "linkedin", "linkin": "linkedin",
-  "mihri": "mihir", "mihr": "mihir",
+  "ganeshh": "ganesh", "ganes": "ganesh",
   "abot": "about", "abut": "about",
   "helo": "hello", "hallo": "hello",
 };
@@ -227,7 +225,7 @@ const FALLBACK_REPLY = `I didn't quite get that. Try asking about **${name}** �
 • "What's your education?"
 • "How can I contact you?"
 • "What certifications do you have?"`;
-const EMPTY_INPUT_REPLY = `Ask about ${name} – e.g. "Who is Mihir?", "Education?", "Work experience?", "Certifications?", or "How to contact?"`;
+const EMPTY_INPUT_REPLY = `Ask about ${name} – e.g. "Who is Ganesh?", "Education?", "Work experience?", "Certifications?", or "How to contact?"`;
 
 /**
  * Get a reply via SSE streaming from the AI agent backend,

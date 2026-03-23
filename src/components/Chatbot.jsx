@@ -198,10 +198,10 @@ export function Chatbot() {
   const getFollowUpSuggestions = useCallback((userText) => {
     const t = userText.toLowerCase();
     if (t.includes('skill') || t.includes('tech') || t.includes('stack')) {
-      return ['Show Python projects', 'Power BI dashboards', 'Any ML experience?'];
-    } else if (t.includes('project') || t.includes('built') || t.includes('dashboard')) {
-      return ['What tech stack?', 'Any live demos?', 'Experience at Amazon?'];
-    } else if (t.includes('experience') || t.includes('work') || t.includes('job') || t.includes('amazon')) {
+      return ['Show React projects', 'Show Node.js projects', 'Any Full Stack experience?'];
+    } else if (t.includes('project') || t.includes('built') || t.includes('dashboard') || t.includes('web app')) {
+      return ['What tech stack?', 'Any live demos?', 'Experience at Paultech?'];
+    } else if (t.includes('experience') || t.includes('work') || t.includes('job') || t.includes('paultech')) {
       return ['What are his skills?', 'Education background?', 'Open to opportunities?'];
     } else if (t.includes('education') || t.includes('degree') || t.includes('university')) {
       return ['Certifications?', 'Work experience?', 'What are his skills?'];
@@ -408,7 +408,7 @@ export function Chatbot() {
                 <div className="relative">
                   <img
                     src={homeData.image.src}
-                    alt="Mihir"
+                    alt="Ganesh"
                     className="w-10 h-10 rounded-xl object-cover shadow-sm border border-slate-200"
                   />
                   <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full"></span>
@@ -589,7 +589,7 @@ export function Chatbot() {
             <div className="relative">
               <img
                 src={homeData.image.src}
-                alt="Mihir"
+                alt="Ganesh"
                 className="w-11 h-11 rounded-full object-cover"
               />
               {/* Green dot */}

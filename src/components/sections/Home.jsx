@@ -136,7 +136,7 @@ export const Home = () => {
               </a>
               <a
                 href={homeData.social.email}
-                aria-label="Email Mihir"
+                aria-label="Email Ganesh"
                 className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-rose-500 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-rose-300 hover:shadow-[0_10px_20px_rgba(244,63,94,0.15)]"
               >
                 <HiOutlineMail className="text-2xl" />

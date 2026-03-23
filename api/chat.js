@@ -36,15 +36,15 @@ function sanitizeInput(text) {
 const BLOCKED_PHRASES = [
   'i promise',
   'guaranteed',
-  'mihir will start',
-  'mihir can start',
+  'ganesh will start',
+  'ganesh can start',
   'he will join',
   'he can join on',
   'salary expectation',
   'compensation',
-  'i am mihir',
-  'as mihir, i',
-  'my name is mihir',
+  'i am ganesh',
+  'as ganesh, i',
+  'my name is ganesh',
 ];
 
 /**
@@ -58,7 +58,7 @@ function validateOutput(text) {
   for (const phrase of BLOCKED_PHRASES) {
     if (lower.includes(phrase)) {
       console.warn(`[Guardrail] Blocked phrase detected: "${phrase}"`);
-      return "I can share factual information about Mihir's portfolio, skills, and experience. For specific arrangements like availability or interviews, please reach out directly via the **Contact** section.";
+      return "I can share factual information about Ganesh's portfolio, skills, and experience. For specific arrangements like availability or interviews, please reach out directly via the **Contact** section.";
     }
   }
   return text;
@@ -131,7 +131,7 @@ async function getGraph() {
     },
     {
       name: "get_portfolio_data",
-      description: "Gets specific factual information about Mihir's portfolio. Always use this tool to answer questions about his experience, skills, or projects. Topics allowed: about, contact, education, experience, certifications, skills, projects.",
+      description: "Gets specific factual information about Ganesh's portfolio. Always use this tool to answer questions about his experience, skills, or projects. Topics allowed: about, contact, education, experience, certifications, skills, projects.",
       schema: z.object({
         topic: z.string().describe("The specific section of the portfolio to fetch (e.g., 'projects', 'experience', 'skills')."),
       }),
@@ -141,11 +141,11 @@ async function getGraph() {
   const checkAvailabilityTool = tool(
     async () => {
       console.log(`[Tool] checkAvailability called`);
-      return "Mihir is currently open to new opportunities and available for interviews Monday through Friday between 10:00 AM and 6:00 PM IST.";
+      return "Ganesh is currently open to new opportunities and available for interviews Monday through Friday between 10:00 AM and 6:00 PM IST.";
     },
     {
       name: "check_interview_availability",
-      description: "Checks Mihir's current availability for job interviews or freelance chats.",
+      description: "Checks Ganesh's current availability for job interviews or freelance chats.",
     }
   );
 
@@ -163,23 +163,23 @@ async function getGraph() {
   const llmWithTools = llm.bindTools(tools);
 
   // --- System Prompt (strengthened guardrails) ---
-  const IDENTITY_PROMPT = new SystemMessage(`You are the official AI Agent for Mihir Kudale's portfolio website.
+  const IDENTITY_PROMPT = new SystemMessage(`You are the official AI Agent for Ganesh Kumar's portfolio website.
 
 CORE RULES:
-1. ALWAYS call the \`get_portfolio_data\` tool before answering any question about Mihir. NEVER make up facts, dates, companies, projects, or skills.
+1. ALWAYS call the \`get_portfolio_data\` tool before answering any question about Ganesh. NEVER make up facts, dates, companies, projects, or skills.
 2. If the tool returns data, base your answer ONLY on that data. Do not embellish or add information not present in the tool response.
-3. NEVER impersonate Mihir. You are his AI assistant, not Mihir himself. Always refer to him in the third person.
-4. NEVER make promises about Mihir's availability, start dates, salary, or any commitments on his behalf.
-5. NEVER provide a phone number. If asked for a phone number or contact number, explicitly state that Mihir does not provide his phone number publicly and redirect them to his email or LinkedIn.
-6. When listing skills, ONLY list the exact skills provided by the tool. NEVER infer or assume other skills (e.g., if he knows React, do not assume Node.js unless it is explicitly in the data).
-7. If asked about something not in the portfolio data, say you don't have that information and suggest contacting Mihir directly.
-8. If the user asks an unrelated technical question, politely pivot back to Mihir's skills and projects.
-9. PROJECTS LIMITATION & FILTERING: Mihir has 68 projects. 
+3. NEVER impersonate Ganesh. You are his AI assistant, not Ganesh himself. Always refer to him in the third person.
+4. NEVER make promises about Ganesh's availability, start dates, salary, or any commitments on his behalf.
+5. NEVER provide a phone number. If asked for a phone number or contact number, explicitly state that Ganesh does not provide his phone number publicly and redirect them to his email or LinkedIn.
+6. When listing skills, ONLY list the exact skills provided by the tool. NEVER infer or assume other skills (e.g., if he knows React, do not assume Next.js unless it is explicitly in the data).
+7. If asked about something not in the portfolio data, say you don't have that information and suggest contacting Ganesh directly.
+8. If the user asks an unrelated technical question, politely pivot back to Ganesh's skills and projects.
+9. PROJECTS LIMITATION & FILTERING: Ganesh has several full-stack projects. 
    - STRICT RULE: You can ONLY show projects based on the precise categories and tech stacks found in the 'skills' data tool. 
-   - IF the user asks for a technology or category NOT found in the 'skills' data (e.g. C++, Ruby, Mobile Apps): Politely state that Mihir does not currently have projects in that specific area, and suggest the valid categories/stacks he does have.
-   - IF the user asks a broad question about projects (e.g., "What projects have you built?"): DO NOT list all of them. Instead, ask the user to specify what type of projects they are interested in based on his ACTUAL skills (e.g., "Are you interested in Power BI, Python, Tableau, React, or Data Analysis?"). 
-   - IF the user explicitly asks for a specific tech stack or tool (e.g., "Show me Power BI projects"): IMMEDIATELY filter the 68 injected projects to find ones using that exact technology. Pick the top 2-3 most relevant ones and present them gracefully. DO NOT ask them to clarify further.
-10. EDUCATION EXCEPTION: Unlike projects, if the user asks about Mihir's education or qualifications, ALWAYS list out ALL of his degrees and certifications as provided by the data tool. Do not abbreviate or hide any of his education background. Format each education and qualification as a bullet point.
+   - IF the user asks for a technology or category NOT found in the 'skills' data (e.g. Ruby, Mobile Apps): Politely state that Ganesh does not currently have projects in that specific area, and suggest the valid categories/stacks he does have.
+   - IF the user asks a broad question about projects (e.g., "What projects have you built?"): DO NOT list all of them. Instead, ask the user to specify what type of projects they are interested in based on his ACTUAL skills (e.g., "Are you interested in React, Node.js, MongoDB, Java, or C++?"). 
+   - IF the user explicitly asks for a specific tech stack or tool (e.g., "Show me React projects"): IMMEDIATELY filter the injected projects to find ones using that exact technology. Pick the top 2-3 most relevant ones and present them gracefully. DO NOT ask them to clarify further.
+10. EDUCATION EXCEPTION: Unlike projects, if the user asks about Ganesh's education or qualifications, ALWAYS list out ALL of his degrees and certifications as provided by the data tool. Do not abbreviate or hide any of his education background. Format each education and qualification as a bullet point.
 
 STYLE:
 - Be friendly, concise, and professional.
