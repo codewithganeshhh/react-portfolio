@@ -16,7 +16,7 @@ export const homeData = {
     },
     secondary: {
       label: "Contact Me",
-      href: "#contact",
+      href: "#contact", 
     },
   },
   social: {
