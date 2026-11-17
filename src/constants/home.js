@@ -2,20 +2,45 @@
 export const homeData = {
   name: "Ganesh Kumar",
   roles: "Software Developer",
-  headline: "I build responsive, high-performance web applications that deliver seamless user experiences from front to back.",
+  rolesList: [
+    "Software Developer",
+    "Full-Stack Web Architect",
+    "AI & LLM Solutions Builder",
+    "Problem Solver & Hackathon Winner",
+  ],
+  status: "Available for new opportunities",
+  headline: "I architect high-performance, intelligent web applications that deliver seamless user experiences from front to back.",
+  bio: "Passionate about building responsive modern web applications, scalable APIs, and integrating intelligent AI workflows to solve real-world problems.",
   badges: [
     "Software Developer",
     "University Hackathon Winner",
     "Open Source Contributor",
     "Tech Community Lead",
   ],
+  techStack: [
+    { name: "React", category: "Frontend" },
+    { name: "Node.js", category: "Backend" },
+    { name: "JavaScript", category: "Language" },
+    { name: "Python", category: "AI & Scripting" },
+    { name: "Tailwind CSS", category: "Styling" },
+    { name: "MongoDB", category: "Database" },
+    { name: "Express.js", category: "Backend" },
+    { name: "Git & GitHub", category: "DevOps" },
+    { name: "REST APIs", category: "Architecture" },
+  ],
+  stats: [
+    { value: "6+", label: "Months Experience", desc: "Software & Web Dev" },
+    { value: "5+", label: "Projects Deployed", desc: "Full Stack & Modern Web" },
+    { value: "1st", label: "Hackathon Champion", desc: "University Tech Fest" },
+    { value: "5+", label: "Certifications", desc: "Oracle & Industry Verified" },
+  ],
   cta: {
     primary: {
-      label: "View Projects",
+      label: "Explore Projects",
       href: "#projects",
     },
     secondary: {
-      label: "Contact Me",
+      label: "Get In Touch",
       href: "#contact", 
     },
   },
@@ -31,3 +56,4 @@ export const homeData = {
     height: 520,
   },
 };
+

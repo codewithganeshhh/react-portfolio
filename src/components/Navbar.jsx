@@ -42,8 +42,8 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-          ? "bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-[0_4px_30px_rgba(0,0,0,0.03)]"
-          : "bg-white/40 backdrop-blur-md border-b border-transparent"
+          ? "bg-[#030712]/85 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]"
+          : "bg-[#030712]/40 backdrop-blur-md border-b border-white/5"
           }`}
       >
         <div className="max-w-7xl mx-auto px-6">
@@ -51,13 +51,13 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             {/* Brand */}
             <Link
               to="/"
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2.5 group"
               aria-label="Ganesh Kumar home"
             >
               <img
                 src="/icon.png"
                 alt="Ganesh Kumar Logo"
-                className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
+                className="h-8 w-auto transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]"
               />
               <span className="sr-only">Ganesh Kumar</span>
             </Link>
@@ -68,15 +68,15 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`relative capitalize text-sm font-semibold px-3 py-1.5 rounded-lg transition-all duration-200 group ${isActive(item.path)
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-slate-500 hover:text-slate-900 hover:bg-slate-100"
+                  className={`relative capitalize text-sm font-semibold px-3.5 py-1.5 rounded-lg transition-all duration-200 group ${isActive(item.path)
+                    ? "text-cyan-400 bg-cyan-500/10 border border-cyan-500/20"
+                    : "text-slate-300 hover:text-white hover:bg-white/5"
                     }`}
                 >
                   {item.label}
                   {/* Active underline indicator */}
                   <span
-                    className={`absolute bottom-0.5 left-3 right-3 h-[2px] rounded-full bg-gradient-to-r from-blue-500 to-violet-500 transition-all duration-300 ${isActive(item.path) ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                    className={`absolute bottom-0.5 left-3 right-3 h-[2px] rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 ${isActive(item.path) ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
                       }`}
                   />
                 </Link>
@@ -86,7 +86,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             {/* Hamburger Button */}
             <button
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="md:hidden relative w-9 h-9 flex items-center justify-center rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all focus:outline-none"
+              className="md:hidden relative w-9 h-9 flex items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-all focus:outline-none"
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
             >
@@ -116,24 +116,24 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-white/80 backdrop-blur-xl"
+          className="absolute inset-0 bg-black/80 backdrop-blur-xl"
           onClick={() => setMenuOpen(false)}
         />
 
         {/* Menu Panel */}
         <div
-          className={`absolute top-16 left-0 right-0 bg-white/95 border-b border-slate-200 px-6 py-6 shadow-xl transition-all duration-300 ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
+          className={`absolute top-16 left-0 right-0 bg-[#030712]/95 border-b border-slate-800 px-6 py-6 shadow-2xl transition-all duration-300 ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
             }`}
         >
-          <nav className="flex flex-col gap-1">
+          <nav className="flex flex-col gap-1.5">
             {menuItems.map((item, index) => (
               <Link
                 key={item.label}
                 to={item.path}
                 onClick={() => setMenuOpen(false)}
                 className={`capitalize text-base font-semibold px-4 py-3 rounded-xl transition-all duration-200 ${isActive(item.path)
-                  ? "text-blue-600 bg-blue-50 border border-blue-100"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                  ? "text-cyan-400 bg-cyan-500/10 border border-cyan-500/20"
+                  : "text-slate-300 hover:text-white hover:bg-white/5"
                   }`}
                 style={{ animationDelay: `${index * 40}ms` }}
               >

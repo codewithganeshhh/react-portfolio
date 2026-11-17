@@ -21,12 +21,12 @@ const Education = lazy(() => import("./components/sections/Education"));
 const Skills = lazy(() => import("./components/sections/Skills"));
 const AboutMe = lazy(() => import("./components/sections/AboutMe"));
 
-// Loading fallback — clear, light-mode spinner
+// Loading fallback — clear dark-mode spinner
 const SectionLoader = () => (
   <div className="flex items-center justify-center min-h-[200px] bg-transparent">
     <div className="relative w-10 h-10">
-      <div className="absolute inset-0 rounded-full border-2 border-slate-200" />
-      <div className="absolute inset-0 rounded-full border-2 border-t-blue-500 border-r-transparent border-b-transparent border-l-transparent animate-spin" />
+      <div className="absolute inset-0 rounded-full border-2 border-slate-800" />
+      <div className="absolute inset-0 rounded-full border-2 border-t-cyan-400 border-r-transparent border-b-transparent border-l-transparent animate-spin" />
     </div>
   </div>
 );
@@ -52,7 +52,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-dvh bg-slate-50 text-slate-900 selection:bg-blue-200 selection:text-blue-900">
+    <div className="min-h-dvh bg-[#030712] text-slate-100 selection:bg-blue-500/30 selection:text-blue-200">
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       <AnimatePresence mode="wait">
@@ -94,16 +94,16 @@ function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-blue-600 text-white shadow-[0_10px_25px_rgba(37,99,235,0.4)] hover:shadow-[0_15px_35px_rgba(37,99,235,0.5)] hover:bg-blue-500 hover:-translate-y-1 transition-all duration-300"
+          className="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:shadow-[0_0_35px_rgba(37,99,235,0.7)] hover:from-blue-500 hover:to-indigo-500 hover:-translate-y-1 transition-all duration-300"
           aria-label="Scroll to top"
         >
           <FaArrowUp className="text-base" />
         </button>
       )}
 
-      {/* Subtle Premium Noise Overlay */}
+      {/* Subtle Premium Noise Overlay for Dark Theme */}
       <div
-        className="fixed inset-0 z-0 pointer-events-none opacity-[0.015] mix-blend-overlay"
+        className="fixed inset-0 z-0 pointer-events-none opacity-[0.02] mix-blend-screen"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
         }}
