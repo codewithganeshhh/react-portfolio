@@ -11,6 +11,7 @@ import {
   SiMongodb,
   SiExpress,
   SiGit,
+  SiOracle,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import { homeData } from "../../constants/home";
@@ -78,15 +79,6 @@ export const Home = () => {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-medium text-slate-300 shadow-lg shadow-black/40 backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <span>Available for new opportunities</span>
-            </div>
-
             {/* Main Headline */}
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
@@ -105,7 +97,7 @@ export const Home = () => {
               I develop responsive, high-performance web applications using React, Node.js, Docker, and modern software practices. Focused on clean architecture, scalable code, and delivering seamless user experiences.
             </p>
 
-            {/* Core Tech Stack (Now with Docker & Kubernetes + Brand Icons) */}
+            {/* Core Tech Stack */}
             <div className="pt-1">
               <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2.5">
                 Core Technologies
@@ -123,7 +115,7 @@ export const Home = () => {
               </div>
             </div>
 
-            {/* Action Buttons & Socials */}
+            {/* Action Buttons & Socials (With Real Brand Hover Colors) */}
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <MagneticButton strength={0.15}>
                 <a
@@ -145,30 +137,35 @@ export const Home = () => {
                 </a>
               </MagneticButton>
 
-              {/* Social links */}
-              <div className="flex items-center gap-2 pl-2">
+              {/* Social links with Real Brand Colors on Hover */}
+              <div className="flex items-center gap-2.5 pl-2">
+                {/* LinkedIn - Real Color #0A66C2 */}
                 <a
                   href={homeData.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 hover:-translate-y-0.5 transition-all"
+                  className="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.5)] hover:-translate-y-1 transition-all duration-200"
                 >
                   <FaLinkedin className="text-base" />
                 </a>
+
+                {/* GitHub - Real Color Clean White on Dark */}
                 <a
                   href={homeData.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 hover:-translate-y-0.5 transition-all"
+                  className="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:bg-white hover:text-black hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:-translate-y-1 transition-all duration-200"
                 >
                   <FaGithub className="text-base" />
                 </a>
+
+                {/* Email - Real Color #EA4335 */}
                 <a
                   href={homeData.social.email}
                   aria-label="Email"
-                  className="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 hover:-translate-y-0.5 transition-all"
+                  className="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:bg-[#EA4335] hover:text-white hover:border-[#EA4335] hover:shadow-[0_0_20px_rgba(234,67,53,0.5)] hover:-translate-y-1 transition-all duration-200"
                 >
                   <HiOutlineMail className="text-lg" />
                 </a>
@@ -194,25 +191,20 @@ export const Home = () => {
                 />
 
                 {/* 3D Depth Layer 0: Dark Glass Card Chassis */}
-                <div className="relative rounded-[2rem] border border-slate-800 bg-slate-900/90 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] p-4 backdrop-blur-2xl space-y-3.5">
+                <div className="relative rounded-[2rem] border border-slate-800 bg-slate-900/90 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] p-4 backdrop-blur-2xl space-y-3">
                   
-                  {/* Card Header: Tech ID Row */}
-                  <div className="flex items-center justify-between pb-1 px-1">
-                    <div className="flex items-center gap-2">
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                      </span>
-                      <span className="text-[11px] font-mono font-semibold text-slate-300 tracking-wider">
-                        GANESH.DEV // ID
-                      </span>
-                    </div>
-                    <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/60 border border-cyan-800/60 px-2 py-0.5 rounded-md font-semibold">
-                      FULL-STACK
+                  {/* Card Header: Clean Tech ID (Without Full-Stack tag) */}
+                  <div className="flex items-center gap-2 pb-1 px-1">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    <span className="text-[11px] font-mono font-semibold text-slate-300 tracking-wider">
+                      GANESH.DEV // ID
                     </span>
                   </div>
 
-                  {/* 3D Depth Layer 1: Framed Portrait with Seamless Dark Gradient */}
+                  {/* 3D Depth Layer 1: Framed Portrait with Higher Focal Crop */}
                   <div
                     style={{ transform: "translateZ(15px)" }}
                     className="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner group/photo"
@@ -222,21 +214,21 @@ export const Home = () => {
                       alt={homeData.image.alt}
                       width={homeData.image.width}
                       height={homeData.image.height}
-                      className="w-full h-[320px] sm:h-[350px] object-cover object-top filter brightness-[0.95] contrast-[1.04] transition-transform duration-500 group-hover/photo:scale-102"
+                      className="w-full h-[300px] sm:h-[330px] object-cover object-[50%_18%] filter brightness-[0.98] contrast-[1.04] transition-transform duration-500 group-hover/photo:scale-103"
                       loading="eager"
                       fetchPriority="high"
                     />
 
-                    {/* Smooth vignette gradient at the bottom so photo melts into dark card */}
+                    {/* Smooth bottom vignette gradient */}
                     <div
                       aria-hidden="true"
                       className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none"
                     />
 
-                    {/* Quick location tag over image bottom */}
-                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-800/80 text-[11px] font-medium text-slate-300 backdrop-blur-sm">
-                      <span className="text-blue-400">📍</span>
-                      <span>Pune, Maharashtra, India</span>
+                    {/* Location Tag: Hyderabad, Telangana, India */}
+                    <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-950/85 border border-slate-800/80 text-[11px] font-medium text-slate-300 backdrop-blur-sm">
+                      <span className="text-rose-400">📍</span>
+                      <span>Hyderabad, Telangana, India</span>
                     </div>
                   </div>
 
@@ -245,30 +237,31 @@ export const Home = () => {
                     style={{ transform: "translateZ(25px)" }}
                     className="pt-1 px-1 space-y-2.5"
                   >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="flex items-center gap-1.5">
-                          <h3 className="text-base font-bold text-white leading-tight">
-                            Ganesh Kumar
-                          </h3>
-                          <BsPatchCheckFill className="text-blue-400 text-sm" title="Verified Developer" />
-                        </div>
-                        <p className="text-xs text-slate-400 font-medium">
-                          Software Developer &amp; Systems Engineer
-                        </p>
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <h3 className="text-base font-bold text-white leading-tight">
+                          Ganesh Kumar
+                        </h3>
+                        <BsPatchCheckFill className="text-blue-400 text-sm" title="Verified Developer" />
                       </div>
+                      <p className="text-xs text-slate-400 font-medium">
+                        Software Developer &amp; Systems Engineer
+                      </p>
                     </div>
 
-                    {/* Integrated Micro-Badges Row */}
-                    <div className="flex flex-wrap gap-1.5 pt-0.5">
-                      <span className="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1">
-                        <span className="text-amber-400">🏆</span> Hackathon 1st
+                    {/* Single-Row 3-Column Badges (Oracle Certified, Hackathon, Projects — No Overflow) */}
+                    <div className="grid grid-cols-3 gap-1.5 pt-0.5">
+                      <span className="px-1.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[10px] sm:text-[11px] font-semibold text-slate-300 flex items-center justify-center gap-1 text-center truncate">
+                        <span className="text-amber-400 text-xs shrink-0">🏆</span>
+                        <span className="truncate">Hackathon</span>
                       </span>
-                      <span className="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1">
-                        <span className="text-cyan-400">⚡</span> 5+ Projects
+                      <span className="px-1.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[10px] sm:text-[11px] font-semibold text-slate-300 flex items-center justify-center gap-1 text-center truncate">
+                        <span className="text-cyan-400 text-xs shrink-0">⚡</span>
+                        <span className="truncate">5+ Projects</span>
                       </span>
-                      <span className="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] font-semibold text-slate-300 flex items-center gap-1">
-                        <span className="text-blue-400">🐳</span> Docker &amp; K8s
+                      <span className="px-1.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-[10px] sm:text-[11px] font-semibold text-slate-300 flex items-center justify-center gap-1 text-center truncate">
+                        <SiOracle className="text-[#F80000] text-xs shrink-0" />
+                        <span className="truncate">Oracle Cert.</span>
                       </span>
                     </div>
                   </div>
