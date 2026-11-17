@@ -1,10 +1,8 @@
-// src/components/sections/Projects.jsx
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { allProjects, techFilters, techDescriptions } from "../../constants/projects";
-import { TiltCard } from "../ui/TiltCard";
 
 const MAX_VISIBLE_TAGS = 4;
 
@@ -25,91 +23,78 @@ export const Projects = () => {
     return matchesTech && matchesSearch;
   });
 
-  // Show live demo link for any project that has a valid demo URL
   const shouldShowLiveDemo = (demoUrl) => Boolean(demoUrl && demoUrl.trim() !== "");
 
   return (
     <section
       id="projects"
-      className="relative py-28 bg-white text-slate-900 overflow-hidden"
+      className="relative py-28 px-5 sm:px-6 lg:px-8 bg-[#030712] text-slate-100 overflow-hidden border-t border-slate-800/60"
     >
-      {/* Soft Light Orbs */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-50 blur-[120px] pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-slate-100 blur-[100px] pointer-events-none"
-      />
-
       <FallbackReveal>
-        <div className="mx-auto w-full px-5 sm:px-6 lg:px-8 max-w-screen-xl relative z-10">
+        <div className="mx-auto w-full max-w-screen-xl relative z-10">
           {/* Header */}
-          <div className="text-center mb-16 space-y-3">
-            <p className="text-sm font-bold text-blue-600 tracking-widest uppercase">
+          <div className="text-center mb-14 space-y-3">
+            <p className="text-xs font-bold text-blue-400 tracking-widest uppercase">
               Portfolio
             </p>
-            <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
               Featured Projects
             </h2>
           </div>
 
           {/* Search Bar */}
-          <div className="mb-10 flex justify-center">
-            <div className="relative w-full md:w-[600px] group">
-              <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-500 transition-colors">
+          <div className="mb-8 flex justify-center">
+            <div className="relative w-full max-w-lg">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
               <input
                 type="text"
-                placeholder="Search projects…"
+                placeholder="Search projects by name or technology…"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full ps-14 pe-12 py-4 bg-white border-2 border-slate-200 rounded-2xl text-slate-900 font-medium placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-50/50 shadow-sm transition-all duration-300"
+                className="w-full ps-12 pe-10 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white font-normal placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm transition-all"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-700 font-bold transition-all"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:text-white text-xs font-bold transition-all"
                   aria-label="Clear search"
                 >
-                  ×
+                  ✕
                 </button>
               )}
             </div>
           </div>
 
           {/* Tech Filter Pills */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
             {techFilters.map((tech) => (
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              <button
                 key={tech}
                 onClick={() => setActiveTech(tech)}
-                className={`px-5 py-2 rounded-full text-sm font-bold tracking-wide transition-all duration-300 border-2 ${activeTech === tech
-                  ? "bg-blue-600 text-white border-blue-600 shadow-[0_8px_16px_rgba(37,99,235,0.25)] -translate-y-0.5"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-blue-200 hover:text-blue-700 hover:bg-blue-50"
-                  }`}
+                className={`px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border ${
+                  activeTech === tech
+                    ? "bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-600/20"
+                    : "bg-slate-900 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700"
+                }`}
               >
                 {tech}
-              </motion.button>
+              </button>
             ))}
           </div>
 
           {/* Result count */}
-          <p className="text-center font-medium text-slate-500 mb-10">
-            Showing <span className="text-slate-900 font-bold">{filteredProjects.length}</span> project{filteredProjects.length !== 1 ? "s" : ""}
-            {activeTech !== "All" && ` matching `}<span className="text-blue-600">{activeTech !== "All" ? activeTech : ""}</span>
+          <p className="text-center text-xs sm:text-sm font-medium text-slate-400 mb-10">
+            Showing <span className="text-white font-bold">{filteredProjects.length}</span> project{filteredProjects.length !== 1 ? "s" : ""}
+            {activeTech !== "All" && ` matching `}<span className="text-blue-400">{activeTech !== "All" ? activeTech : ""}</span>
           </p>
 
           {/* Project Cards */}
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => {
                 const stack = project.stack ?? [];
@@ -119,87 +104,82 @@ export const Projects = () => {
                 return (
                   <motion.div
                     layout
-                    initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: (index % 3) * 0.1, type: "spring" }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.35, delay: (index % 3) * 0.05 }}
                     key={`${project.title}-${index}`}
-                    className="group relative flex flex-col h-full"
+                    className="group flex flex-col h-full rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 overflow-hidden transition-all duration-200"
                   >
-                    <TiltCard className="flex flex-col flex-1 h-full glass-card overflow-hidden bg-slate-50/50 hover:bg-white @container has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-blue-500 transition-all duration-300">
-                      {/* Project Image */}
-                      {project.image && (
-                        <div className="w-full h-48 sm:h-56 overflow-hidden border-b border-slate-100/50 flex items-center justify-center p-4">
-                          <img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                          />
-                        </div>
-                      )}
-
-                      {/* Card body */}
-                      <div className="p-6 @sm:p-8 flex flex-col flex-1 gap-y-1">
-                        <h3 className="text-xl @sm:text-2xl font-extrabold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
-                          {project.title}
-                        </h3>
-                        <p className="text-base font-medium text-slate-600 mb-6 leading-relaxed flex-1">
-                          {project.description}
-                        </p>
-
-                        {/* Tech Tags */}
-                        <div className="flex flex-wrap gap-2 mb-8 items-center">
-                          {stack.slice(0, MAX_VISIBLE_TAGS).map((tech, i) => (
-                            <span
-                              key={`${project.title}-tag-${tech}-${i}`}
-                              title={techDescriptions?.[tech] ?? tech}
-                              className="bg-blue-50 text-blue-700 border border-blue-100 py-1 px-3 rounded-lg text-xs font-bold"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                          {stack.length > MAX_VISIBLE_TAGS && (
-                            <span className="text-xs font-bold text-slate-500 bg-slate-100 py-1 px-2.5 rounded-lg border border-slate-200">
-                              +{stack.length - MAX_VISIBLE_TAGS} more
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Links — relative + z-10 so gradient-border ::before pseudo-element doesn't intercept clicks */}
-                        <div className="relative z-10 flex gap-5 items-center text-sm font-bold mt-auto pt-5 border-t-2 border-slate-100">
-                          {hasGithub ? (
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 hover:underline transition-colors cursor-pointer"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <FaGithub className="text-lg shrink-0" />
-                              View Code
-                            </a>
-                          ) : (
-                            <span className="inline-flex items-center gap-2 text-slate-300 cursor-not-allowed text-xs font-medium">
-                              <FaGithub className="text-base shrink-0" />
-                              Private Repo
-                            </span>
-                          )}
-                          {showLive && (
-                            <a
-                              href={project.demo}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline transition-colors cursor-pointer ms-auto outline-none"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <FaExternalLinkAlt className="text-xs shrink-0" />
-                              Live Demo
-                            </a>
-                          )}
-                        </div>
+                    {/* Project Image */}
+                    {project.image && (
+                      <div className="w-full h-48 bg-slate-950/80 border-b border-slate-800 flex items-center justify-center p-3 overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-300"
+                        />
                       </div>
-                    </TiltCard>
+                    )}
+
+                    {/* Card body */}
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-slate-300 mb-5 leading-relaxed flex-1">
+                        {project.description}
+                      </p>
+
+                      {/* Tech Tags */}
+                      <div className="flex flex-wrap gap-1.5 mb-6 items-center">
+                        {stack.slice(0, MAX_VISIBLE_TAGS).map((tech, i) => (
+                          <span
+                            key={`${project.title}-tag-${tech}-${i}`}
+                            title={techDescriptions?.[tech] ?? tech}
+                            className="bg-slate-950 text-blue-300 border border-slate-800 py-1 px-2.5 rounded-md text-xs font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {stack.length > MAX_VISIBLE_TAGS && (
+                          <span className="text-xs text-slate-500 bg-slate-950 py-1 px-2 rounded-md border border-slate-800">
+                            +{stack.length - MAX_VISIBLE_TAGS} more
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Links */}
+                      <div className="flex gap-4 items-center text-sm font-semibold mt-auto pt-4 border-t border-slate-800">
+                        {hasGithub ? (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
+                          >
+                            <FaGithub className="text-base" />
+                            <span>Code</span>
+                          </a>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 text-slate-600 text-xs">
+                            <FaGithub className="text-sm" />
+                            <span>Private</span>
+                          </span>
+                        )}
+                        {showLive && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 transition-colors ms-auto"
+                          >
+                            <FaExternalLinkAlt className="text-xs" />
+                            <span>Live Demo</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -207,16 +187,16 @@ export const Projects = () => {
           </motion.div>
 
           {/* GitHub CTA */}
-          <div className="mt-16 text-center">
+          <div className="mt-14 text-center">
             <a
               href="https://github.com/codewithganeshhh"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-slate-200 text-slate-700 bg-white hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 hover:shadow-md transition-all duration-300 font-bold text-base group"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-800 text-slate-200 bg-slate-900 hover:bg-slate-800 hover:text-white transition-all text-sm font-semibold"
             >
-              <FaGithub className="text-xl" />
-              View all projects on GitHub
-              <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              <FaGithub className="text-lg" />
+              <span>View all projects on GitHub</span>
+              <span>→</span>
             </a>
           </div>
         </div>
@@ -224,3 +204,5 @@ export const Projects = () => {
     </section>
   );
 };
+
+export default Projects;

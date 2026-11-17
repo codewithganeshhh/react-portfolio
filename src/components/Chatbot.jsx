@@ -400,30 +400,30 @@ export function Chatbot() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="chatbot-title"
-            className={`fixed bottom-24 right-6 z-[100] flex flex-col w-[min(380px,calc(100vw-3rem))] h-[min(540px,72vh)] rounded-[1.5rem] bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden`}
+            className={`fixed bottom-24 right-6 z-[100] flex flex-col w-[min(380px,calc(100vw-3rem))] h-[min(540px,72vh)] rounded-[1.5rem] bg-slate-900/95 backdrop-blur-2xl border border-slate-800 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden`}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 bg-slate-50/50">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800 bg-slate-950/80">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <img
                     src={homeData.image.src}
                     alt="Ganesh"
-                    className="w-10 h-10 rounded-xl object-cover shadow-sm border border-slate-200"
+                    className="w-10 h-10 rounded-xl object-cover shadow-sm border border-slate-700"
                   />
-                  <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full"></span>
+                  <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 border-2 border-slate-900 rounded-full"></span>
                 </div>
                 <div>
-                  <h3 id="chatbot-title" className="font-bold text-[15px] text-slate-900 leading-tight">
+                  <h3 id="chatbot-title" className="font-bold text-[15px] text-white leading-tight">
                     {chatbotConfig.botName}
                   </h3>
-                  <p className="text-xs font-semibold text-slate-500">AI-powered</p>
+                  <p className="text-xs font-semibold text-slate-400">AI Assistant</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={handleClose}
-                className="p-2 rounded-full text-slate-400 hover:bg-slate-200 hover:text-slate-700 transition-colors focus:outline-none"
+                className="p-2 rounded-full text-slate-400 hover:bg-slate-800 hover:text-white transition-colors focus:outline-none"
                 aria-label="Close chat"
               >
                 <X className="w-5 h-5" />
@@ -432,7 +432,7 @@ export function Chatbot() {
 
             {/* Messages Area */}
             <div
-              className="flex-1 overflow-y-auto p-5 space-y-5 bg-slate-50/30"
+              className="flex-1 overflow-y-auto p-5 space-y-5 bg-slate-950/40"
               aria-live="polite"
               aria-atomic="false"
             >
@@ -445,11 +445,11 @@ export function Chatbot() {
                     <div
                       className={`rounded-[1.25rem] px-4 py-3 text-[15px] shadow-sm ${msg.role === "user"
                         ? "bg-blue-600 text-white rounded-br-sm shadow-[0_4px_14px_rgba(37,99,235,0.2)]"
-                        : "bg-white text-slate-700 rounded-bl-sm border border-slate-100/80 leading-relaxed font-medium"
+                        : "bg-slate-800/90 text-slate-200 rounded-bl-sm border border-slate-700/60 leading-relaxed font-normal"
                         }`}
                     >
                       {msg.role === "bot" ? (
-                        <div className="prose prose-sm max-w-none break-words [&_a]:break-all text-slate-700 font-medium leading-[1.6] [&_a]:text-blue-600 [&_a]:underline [&_strong]:text-slate-900 [&_strong]:font-bold">
+                        <div className="prose prose-sm max-w-none break-words [&_a]:break-all text-slate-200 font-normal leading-[1.6] [&_a]:text-blue-400 [&_a]:underline [&_strong]:text-white [&_strong]:font-bold">
                           {msg.content ? (
                             <Suspense fallback={<span>{msg.content}</span>}>
                               <ReactMarkdown>{msg.content}</ReactMarkdown>
@@ -472,7 +472,7 @@ export function Chatbot() {
                       <button
                         type="button"
                         onClick={() => playingAudioId === msg.id ? handleStopAudio() : handlePlayAudio(msg.id, msg.content)}
-                        className={`p-1 mt-2 rounded-md border text-slate-500 hover:text-slate-800 transition-colors focus:outline-none ${playingAudioId === msg.id ? 'bg-red-50 text-red-600 border-red-200 hover:text-red-700' : 'bg-slate-50 border-slate-100 hover:bg-slate-200'}`}
+                        className={`p-1 mt-2 rounded-md border text-slate-400 hover:text-white transition-colors focus:outline-none ${playingAudioId === msg.id ? 'bg-red-950 text-red-400 border-red-800 hover:text-red-300' : 'bg-slate-800 border-slate-700 hover:bg-slate-700'}`}
                         title={playingAudioId === msg.id ? "Stop reading" : "Read aloud"}
                         aria-label={playingAudioId === msg.id ? "Stop reading" : "Read aloud"}
                       >
@@ -485,16 +485,16 @@ export function Chatbot() {
 
               {loading && !streaming && (
                 <div className="flex flex-col items-start gap-1">
-                  <div className="bg-white rounded-[1.25rem] rounded-bl-sm px-5 py-3.5 border border-slate-100 shadow-sm">
+                  <div className="bg-slate-800 rounded-[1.25rem] rounded-bl-sm px-5 py-3.5 border border-slate-700 shadow-sm">
                     <span className="inline-flex gap-1.5 align-middle">
-                      <span className="w-2 h-2 rounded-full bg-blue-500/80 animate-bounce [animation-delay:0ms]" />
-                      <span className="w-2 h-2 rounded-full bg-blue-500/80 animate-bounce [animation-delay:150ms]" />
-                      <span className="w-2 h-2 rounded-full bg-blue-500/80 animate-bounce [animation-delay:300ms]" />
+                      <span className="w-2 h-2 rounded-full bg-blue-400 animate-bounce [animation-delay:0ms]" />
+                      <span className="w-2 h-2 rounded-full bg-blue-400 animate-bounce [animation-delay:150ms]" />
+                      <span className="w-2 h-2 rounded-full bg-blue-400 animate-bounce [animation-delay:300ms]" />
                     </span>
                   </div>
                   {slowResponse && (
                     <p className="text-xs text-slate-400 font-medium ps-1 animate-pulse">
-                      Still thinking... first response may take a moment ☕
+                      Thinking... ☕
                     </p>
                   )}
                 </div>
@@ -502,9 +502,9 @@ export function Chatbot() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Suggestions — persistent, context-aware after every reply */}
+            {/* Suggestions */}
             {!loading && suggestions.length > 0 && (
-              <div className="px-4 py-2.5 border-t border-slate-100 bg-white">
+              <div className="px-4 py-2.5 border-t border-slate-800 bg-slate-950">
                 <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-2">Ask next</p>
                 <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
                   {suggestions.map((q) => (
@@ -512,7 +512,7 @@ export function Chatbot() {
                       key={q}
                       type="button"
                       onClick={() => handleSuggestionClick(q)}
-                      className="flex-shrink-0 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 text-slate-600 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-colors whitespace-nowrap"
+                      className="flex-shrink-0 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-700 text-slate-300 bg-slate-900 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-colors whitespace-nowrap"
                     >
                       {q}
                     </button>
@@ -520,9 +520,9 @@ export function Chatbot() {
                 </div>
               </div>
             )}
-            {/* Initial suggestions (no conversation yet) */}
+            {/* Initial suggestions */}
             {!loading && suggestions.length === 0 && messages.length <= 1 && (
-              <div className="px-4 py-2.5 border-t border-slate-100 bg-white">
+              <div className="px-4 py-2.5 border-t border-slate-800 bg-slate-950">
                 <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-2">Get started</p>
                 <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
                   {["Experience", "Projects", "Skills", "Contact"].map((q) => (
@@ -530,7 +530,7 @@ export function Chatbot() {
                       key={q}
                       type="button"
                       onClick={() => handleSuggestionClick(q)}
-                      className="flex-shrink-0 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 text-slate-600 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-colors"
+                      className="flex-shrink-0 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-700 text-slate-300 bg-slate-900 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-colors"
                     >
                       {q}
                     </button>
@@ -540,7 +540,7 @@ export function Chatbot() {
             )}
 
             {/* Input Area */}
-            <div className="p-4 border-t border-slate-200 bg-white shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+            <div className="p-4 border-t border-slate-800 bg-slate-950">
               <div className="flex gap-3">
                 <input
                   ref={inputRef}
@@ -550,7 +550,7 @@ export function Chatbot() {
                   onKeyDown={handleKeyDown}
                   placeholder="Ask about my work..."
                   maxLength={chatbotConfig.maxInputLength}
-                  className="flex-1 rounded-xl bg-slate-100/80 px-4 py-3 text-[15px] font-medium text-slate-800 placeholder-slate-400 border border-transparent focus:border-blue-300 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-50/50 transition-all"
+                  className="flex-1 rounded-xl bg-slate-900 px-4 py-3 text-[14px] font-normal text-white placeholder-slate-500 border border-slate-800 focus:border-blue-500 focus:outline-none transition-all"
                   disabled={loading}
                   aria-label="Chat message"
                 />
@@ -558,10 +558,10 @@ export function Chatbot() {
                   type="button"
                   onClick={sendMessage}
                   disabled={!input.trim() || loading}
-                  className="flex items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-white shadow-[0_4px_14px_rgba(37,99,235,0.2)] hover:bg-blue-700 hover:shadow-[0_6px_20px_rgba(37,99,235,0.3)] disabled:opacity-50 disabled:pointer-events-none transition-all focus:outline-none active:scale-95"
+                  className="flex items-center justify-center rounded-xl bg-blue-600 px-4 py-3 text-white hover:bg-blue-500 disabled:opacity-40 disabled:pointer-events-none transition-all focus:outline-none"
                   aria-label="Send message"
                 >
-                  <Send className="w-5 h-5 -ms-0.5" />
+                  <Send className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -569,7 +569,7 @@ export function Chatbot() {
         )}
       </AnimatePresence>
 
-      {/* ── Floating Toggle Button (Light Mode) ── */}
+      {/* ── Floating Toggle Button (Dark Mode) ── */}
       <AnimatePresence>
         {!open && (
           <motion.button
@@ -581,7 +581,7 @@ export function Chatbot() {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
             type="button"
             onClick={() => setOpen(true)}
-            className="fixed bottom-6 right-20 z-[99] flex items-center gap-2.5 p-1.5 pe-5 rounded-full bg-white text-slate-900 border border-slate-200 shadow-[0_10px_25px_rgba(0,0,0,0.1)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.15)] hover:border-slate-300 transition-colors duration-300 focus:outline-none"
+            className="fixed bottom-6 right-20 z-[99] flex items-center gap-2.5 p-1.5 pe-5 rounded-full bg-slate-900 text-white border border-slate-800 shadow-[0_10px_25px_rgba(0,0,0,0.5)] hover:border-slate-700 transition-colors duration-200 focus:outline-none"
             aria-label="Open chat assistant"
             aria-haspopup="dialog"
           >
@@ -590,15 +590,11 @@ export function Chatbot() {
               <img
                 src={homeData.image.src}
                 alt="Ganesh"
-                className="w-11 h-11 rounded-full object-cover"
+                className="w-10 h-10 rounded-full object-cover"
               />
-              {/* Green dot */}
-              <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white" />
+              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-slate-900 rounded-full"></span>
             </div>
-
-            <span className="text-sm font-bold tracking-tight text-slate-700">
-              Ask me anything
-            </span>
+            <span className="text-xs font-semibold text-slate-200">Chat with Ganesh AI</span>
           </motion.button>
         )}
       </AnimatePresence>
