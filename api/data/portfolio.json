@@ -130,6 +130,14 @@
                     "icon": "javascript"
                 },
                 {
+                    "name": "TypeScript",
+                    "icon": "typescript"
+                },
+                {
+                    "name": "Python",
+                    "icon": "python"
+                },
+                {
                     "name": "PHP",
                     "icon": "php"
                 },
@@ -144,6 +152,10 @@
                 {
                     "name": "PostgreSQL",
                     "icon": "postgresql"
+                },
+                {
+                    "name": "Redis",
+                    "icon": "redis"
                 }
             ]
         },
@@ -151,11 +163,19 @@
             "title": "Frontend Tools & UI Libraries",
             "skills": [
                 {
-                    "name": "HTML",
+                    "name": "React",
+                    "icon": "react"
+                },
+                {
+                    "name": "Next.js",
+                    "icon": "nextjs"
+                },
+                {
+                    "name": "HTML5",
                     "icon": "html"
                 },
                 {
-                    "name": "CSS",
+                    "name": "CSS3",
                     "icon": "css"
                 },
                 {
@@ -163,16 +183,12 @@
                     "icon": "javascript"
                 },
                 {
-                    "name": "React",
-                    "icon": "react"
+                    "name": "Tailwind CSS",
+                    "icon": "tailwind"
                 },
                 {
                     "name": "Bootstrap",
                     "icon": "bootstrap"
-                },
-                {
-                    "name": "Tailwind CSS",
-                    "icon": "tailwind"
                 },
                 {
                     "name": "Material UI",
@@ -192,10 +208,6 @@
                     "icon": "express"
                 },
                 {
-                    "name": "PHP",
-                    "icon": "php"
-                },
-                {
                     "name": "REST API",
                     "icon": "rest"
                 },
@@ -206,12 +218,32 @@
                 {
                     "name": "JWT Authentication",
                     "icon": "jwt"
+                },
+                {
+                    "name": "Nginx",
+                    "icon": "nginx"
                 }
             ]
         },
         {
-            "title": "Tools & Cloud",
+            "title": "DevOps, Cloud & Tools",
             "skills": [
+                {
+                    "name": "Docker",
+                    "icon": "docker"
+                },
+                {
+                    "name": "Kubernetes",
+                    "icon": "kubernetes"
+                },
+                {
+                    "name": "CI/CD Pipelines",
+                    "icon": "cicd"
+                },
+                {
+                    "name": "GitHub Actions",
+                    "icon": "githubactions"
+                },
                 {
                     "name": "Git",
                     "icon": "git"
@@ -221,12 +253,12 @@
                     "icon": "github"
                 },
                 {
-                    "name": "GCP",
+                    "name": "Google Cloud (GCP)",
                     "icon": "gcp"
                 },
                 {
-                    "name": "VS Code",
-                    "icon": "vscode"
+                    "name": "Linux",
+                    "icon": "linux"
                 },
                 {
                     "name": "Postman",
