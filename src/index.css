@@ -192,8 +192,8 @@ section {
   }
 }
 
-/* ===== INFINITE MARQUEE ANIMATIONS ===== */
-@keyframes marquee-scroll {
+/* ===== INFINITE MARQUEE ANIMATIONS (OPPOSITE BIDIRECTIONAL FLOW) ===== */
+@keyframes marquee-left {
   0% {
     transform: translateX(0%);
   }
@@ -202,22 +202,31 @@ section {
   }
 }
 
-.animate-marquee {
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 34s linear infinite;
+  animation: marquee-left 32s linear infinite;
   will-change: transform;
 }
 
-.animate-marquee-slow {
+.animate-marquee-right {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-right 32s linear infinite;
   will-change: transform;
 }
 
-.animate-marquee:hover,
-.animate-marquee-slow:hover {
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
   animation-play-state: paused;
 }
 
